@@ -1,4 +1,4 @@
-class BrewGem < Formula
+class BrewRuby187Gem < Formula
   desc "Install rubygems as homebrew formulas"
   homepage "https://github.com/sportngin/brew-gem"
   url "https://github.com/someword/homewbrew-jcruft/archive/1.0.0.tar.gz"
