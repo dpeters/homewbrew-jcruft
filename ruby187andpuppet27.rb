@@ -1,3 +1,4 @@
+require 'FileUtils'
 class Ruby187andpuppet27 < Formula
   desc "Install the olds software"
   homepage ""
@@ -12,7 +13,11 @@ class Ruby187andpuppet27 < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
 
     # Remove unrecognized options if warned by configure
+    FileUtils.mkdir_p("/usr/local/Cellar/ruby187andpuppet27/1.0.1/bin")
+    FileUtils.touch("/usr/local/Cellar/ruby187andpuppet27/1.0.1/bin/wtf")
     system "/usr/local/opt/ruby187/bin/ruby", "setup.rb"
+    FileUtils.mkdir_p("/usr/local/Cellar/ruby187andpuppet27/1.0.1/bin")
+    FileUtils.touch("/usr/local/Cellar/ruby187andpuppet27/1.0.1/bin/wtf")
   end
 
   test do
