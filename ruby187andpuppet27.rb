@@ -2,7 +2,7 @@ class Ruby187andpuppet27 < Formula
   desc "Install the olds software"
   homepage ""
   url "https://rubygems.org/rubygems/rubygems-2.4.8.tgz"
-  version "1.0.0"
+  version "1.0.1"
   sha256 "5a4335fef5904ceb76d912a9d4a2464fbbb172df3b2abcb0c67003e77764845e"
 
   # depends_on "cmake" => :build
