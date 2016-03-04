@@ -12,7 +12,7 @@ class Ruby187andpuppet27 < Formula
     # ENV.deparallelize  # if your formula fails when building in parallel
 
     # Remove unrecognized options if warned by configure
-    system "/usr/local/opt/ruby187/1.8.7-p374_1/bin/ruby", "setup.rb"
+    system "/usr/local/opt/ruby187/bin/ruby", "setup.rb"
   end
 
   test do
