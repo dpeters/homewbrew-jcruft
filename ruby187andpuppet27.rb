@@ -10,6 +10,19 @@ class Ruby187andpuppet27 < Formula
   depends_on "homebrew/versions/ruby187" # if your formula requires any X11/XQuartz components
 
   def install
+    # Fixes "dyld: lazy symbol binding failed: Symbol not found: _clock_gettime"
+    if MacOS.version == "10.12" && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"
+      args << "-DHAVE_CLOCK_GETTIME:INTERNAL=0"
+
+      inreplace "src/trivia/util.h", "#ifndef HAVE_CLOCK_GETTIME",
+                                     "#ifdef UNDEFINED_GIBBERISH"
+    end
+    if MacOS.version == "10.11" && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"
+      inreplace %w[libavdevice/v4l2.c libavutil/time.c], "HAVE_CLOCK_GETTIME",
+                                                         "UNDEFINED_GIBBERISH"
+    end
+
+
     # ENV.deparallelize  # if your formula fails when building in parallel
 
     # Remove unrecognized options if warned by configure
