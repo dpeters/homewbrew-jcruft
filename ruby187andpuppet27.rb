@@ -1,4 +1,4 @@
-/require 'FileUtils'
+require 'FileUtils'
 class Ruby187andpuppet27 < Formula
   desc "Install the olds software"
   homepage ""
