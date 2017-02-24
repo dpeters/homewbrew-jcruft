@@ -18,8 +18,10 @@ class Ruby187andpuppet27 < Formula
                                      "#ifdef UNDEFINED_GIBBERISH"
     end
     if MacOS.version == "10.11" && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"
-      inreplace %w[libavdevice/v4l2.c libavutil/time.c], "HAVE_CLOCK_GETTIME",
-                                                         "UNDEFINED_GIBBERISH"
+      args << "-DHAVE_CLOCK_GETTIME:INTERNAL=0"
+
+      inreplace "src/trivia/util.h", "#ifndef HAVE_CLOCK_GETTIME",
+                                     "#ifdef UNDEFINED_GIBBERISH"
     end
 
 
