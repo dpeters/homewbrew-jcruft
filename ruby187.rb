@@ -52,11 +52,11 @@ class Ruby187 < Formula
     ]
     
     if MacOS.version == "10.12" && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"
-      args << "-DHAVE_CLOCK_GETTIME:INTERNAL=0"
+      args << "LDFLAGS=\"-no_weak_imports\""
     end
     
     if MacOS.version == "10.11" && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"
-      args << "-DHAVE_CLOCK_GETTIME:INTERNAL=0"
+      args << "LDFLAGS=\"-no_weak_imports\""
     end
 
     if build.universal?
