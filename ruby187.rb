@@ -50,14 +50,6 @@ class Ruby187 < Formula
       --with-sitedir=#{HOMEBREW_PREFIX}/lib/ruby/site_ruby
       --with-vendordir=#{HOMEBREW_PREFIX}/lib/ruby/vendor_ruby
     ]
-    
-    if MacOS.version == "10.12" && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"
-      args << "LDFLAGS=\"-no_weak_imports\""
-    end
-    
-    if MacOS.version == "10.11" && MacOS::Xcode.installed? && MacOS::Xcode.version >= "8.0"
-      args << "LDFLAGS=\"-no_weak_imports\""
-    end
 
     if build.universal?
       ENV.universal_binary
