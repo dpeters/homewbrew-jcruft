@@ -1,4 +1,4 @@
-require 'FileUtils'
+/require 'FileUtils'
 class Ruby187andpuppet27 < Formula
   desc "Install the olds software"
   homepage ""
@@ -7,7 +7,7 @@ class Ruby187andpuppet27 < Formula
   sha256 "5a4335fef5904ceb76d912a9d4a2464fbbb172df3b2abcb0c67003e77764845e"
 
   # depends_on "cmake" => :build
-  depends_on "homebrew/versions/ruby187" # if your formula requires any X11/XQuartz components
+  depends_on "dpeters/jcruft/ruby187" # if your formula requires any X11/XQuartz components
 
   def install
     # ENV.deparallelize  # if your formula fails when building in parallel
